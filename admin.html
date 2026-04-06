@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Layout */
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    height: 90vh;
+    background: #4facfe;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Teacher Section */
+.teacher {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.teacher p {
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+.teacher ul {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.teacher li {
+    padding: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.teacher li:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+/* Bottom links */
+.sidebar a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.sidebar a:hover {
+    background: #007bff;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Sections */
+.section {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #4facfe;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #007bff;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    STUDENT ATTENDENCE MANAGEMENT SYSTEM - ADMIN
+</div>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Teachers</h3>
+
+        <!-- Teacher 1 -->
+        <div class="teacher">
+            <p>Mr. Sharma</p>
+            <ul>
+                <li>Class 10A</li>
+            </ul>
+        </div>
+
+        <!-- Teacher 2 -->
+        <div class="teacher">
+            <p>Ms. Priya</p>
+            <ul>
+                <li>Class 10B</li>
+            </ul>
+        </div>
+
+        <!-- Teacher 3 -->
+        <div class="teacher">
+            <p>Mr. Raj</p>
+            <ul>
+                <li>Class 9A</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <a href="#">Dashboard</a>
+        <a href="#">Manage Students</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Dashboard -->
+        <div class="card-container">
+            <div class="card">
+                <h2>120</h2>
+                <p>Students</p>
+            </div>
+            <div class="card">
+                <h2>15</h2>
+                <p>Teachers</p>
+            </div>
+            <div class="card">
+                <h2>10</h2>
+                <p>Classes</p>
+            </div>
+        </div>
+
+        <!-- Add Student -->
+        <div class="section">
+            <h3>Add Student</h3>
+            <input type="number" placeholder="Student ID">
+            <input type="text" placeholder="Student Name">
+            <select>
+                <option>Select Class</option>
+                <option>10A</option>
+                <option>10B</option>
+            </select>
+            <button>Add Student</button>
+        </div>
+
+        <!-- Add Teacher -->
+        <div class="section">
+            <h3>Add Teacher</h3>
+            <input type="number" placeholder="Teacher ID">
+            <input type="text" placeholder="Teacher Name">
+            <input type="text" placeholder="Subject">
+            <button>Add Teacher</button>
+        </div>
+
+        <!-- Create Class -->
+        <div class="section">
+            <h3>Create Class (Assign Teacher)</h3>
+            <input type="text" placeholder="Class Name (10A)">
+            <select>
+                <option>Select Teacher</option>
+                <option>Mr. Sharma</option>
+                <option>Ms. Priya</option>
+            </select>
+            <button>Create Class</button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Attendance Management System</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc;
+        }
+
+        .header {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .login-box {
+            width: 320px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box input,
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .login-box input {
+            border: 1px solid #ccc;
+        }
+
+        .login-box button {
+            background: #4facfe;
+            border: 1px solid #4facfe;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        STUDENT ATTENDENCE MANAGEMENT SYSTEM
+    </div>
+
+    <div class="container">
+        <div class="login-box">
+            <form onsubmit="loginUser(event)">
+                
+                <input type="number" id="userId" placeholder="Enter ID" required>
+                
+                <input type="password" id="password" placeholder="Enter Password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function loginUser(event) {
+            event.preventDefault();
+
+            let id = document.getElementById("userId").value;
+            let password = document.getElementById("password").value;
+
+            // Dummy users (multiple users possible)
+            let users = [
+                { id: "1", password: "admin123", role: "admin" },
+                { id: "101", password: "teacher123", role: "teacher" },
+                { id: "102", password: "teacher456", role: "teacher" },
+                { id: "201", password: "student123", role: "student" },
+                { id: "202", password: "student456", role: "student" }
+            ];
+
+            let found = false;
+
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].id === id && users[i].password === password) {
+                    
+                    found = true;
+
+                    if (users[i].role === "admin") {
+                        alert("Welcome Admin");
+                        window.location.href = "admin.html";
+                    } 
+                    else if (users[i].role === "teacher") {
+                        alert("Welcome Teacher");
+                        window.location.href = "teacher.html";
+                    } 
+                    else if (users[i].role === "student") {
+                        alert("Welcome Student");
+                        window.location.href = "student.html";
+                    }
+
+                    break;
+                }
+            }
+
+            if (!found) {
+                alert("Invalid ID or Password");
+            }
+        }
+    </script>
+
+</body>
+</html>
